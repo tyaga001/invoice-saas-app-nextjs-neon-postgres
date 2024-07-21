@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	font-family: arial, sans-serif;
+	margin-top: 30px;
+	border-collapse: collapse;
+	width: 100%;
+	box-shadow: 0 2px 5px 0 rgba(50, 50, 105, 0.15),
+		0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+th {
+	background-color: #5ab2ff;
+}
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #eeeeee;
+}
+tr:hover {
+	background-color: #f7f5f2;
+}

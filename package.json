@@ -1,0 +1,39 @@
+{
+  "name": "invoice-generator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate": "npx drizzle-kit generate -- dotenv_config_path='.env.local'",
+    "db-create": "npx drizzle-kit push -- dotenv_config_path='.env.local'",
+    "email": "email dev --dir src/app/emails"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.2.4",
+    "@neondatabase/serverless": "^0.9.4",
+    "@react-email/components": "0.0.21",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.32.0",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-email": "2.1.5",
+    "react-icons": "^5.2.1",
+    "react-to-print": "^2.15.1",
+    "resend": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.23.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
