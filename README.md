@@ -25,6 +25,12 @@ This project is based on the following tutorial: Writing is in progress, I'll ad
 - Authentication: Clerk
 - Deployment: Vercel (frontend), Neon (database)
 
+## Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+- Git
+
 ## Getting Started
 
 - Clone the repository.
