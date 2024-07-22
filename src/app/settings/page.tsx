@@ -82,7 +82,7 @@ export default function Settings() {
 	return (
 		<div className='w-full'>
 			<main className='min-h-[90vh] flex items-start'>
-			<SideNav />
+				<SideNav />
 
 				<div className='md:w-5/6 w-full h-full p-6'>
 					<h2 className='text-2xl font-bold'>Bank Information</h2>
@@ -91,20 +91,23 @@ export default function Settings() {
 					</p>
 
 					<div className='flex md:flex-row flex-col items-start justify-between w-full md:space-x-4'>
-						<section className='md:w-1/3 w-full bg-blue-50 h-full p-3 rounded-md space-y-3'>
-							<p className='text-sm opacity-75'>
-								Account Name: {bankInfo.account_name}
-							</p>
-							<p className='text-sm opacity-75'>
-								Account Number: {bankInfo.account_number}
-							</p>
-							<p className='text-sm opacity-75'>
-								Bank Name: {bankInfo.bank_name}
-							</p>
-							<p className='text-sm opacity-75'>
-								Currency: {bankInfo.currency}
-							</p>
-						</section>
+						{bankInfo?.account_name && (
+							<section className='md:w-1/3 w-full bg-blue-50 h-full p-3 rounded-md space-y-3'>
+								<p className='text-sm opacity-75'>
+									Account Name: {bankInfo.account_name}
+								</p>
+								<p className='text-sm opacity-75'>
+									Account Number: {bankInfo.account_number}
+								</p>
+								<p className='text-sm opacity-75'>
+									Bank Name: {bankInfo.bank_name}
+								</p>
+								<p className='text-sm opacity-75'>
+									Currency: {bankInfo.currency}
+								</p>
+							</section>
+						)}
+
 						<form
 							className='md:w-2/3 w-full p-3 flex flex-col'
 							method='POST'

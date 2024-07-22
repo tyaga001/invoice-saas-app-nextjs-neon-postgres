@@ -7,14 +7,14 @@ import SideNav from "@/app/components/SideNav";
 export default function History() {
 	const { isLoaded, isSignedIn, user } = useUser();
 	const [invoices, setInvoices] = useState<Invoice[]>([]);
-	
-	const fetchInvoices = useCallback(async () => { 
+
+	const fetchInvoices = useCallback(async () => {
 		try {
 			const res = await fetch(`/api/invoices?userID=${user?.id}`);
 			const data = await res.json();
 			setInvoices(data.invoices);
 
-		} catch (err) { 
+		} catch (err) {
 			console.error(err);
 		}
 
@@ -43,25 +43,27 @@ export default function History() {
 						View all your invoices and their status
 					</p>
 
-					{invoices.map((invoice) => (
+					{invoices.length > 0 ? invoices.map((invoice) => (
 
-							<div className='bg-blue-50 w-full mb-3 rounded-md p-3 flex items-center justify-between' key={invoice.id}>
-						<div>
-							<p className='text-sm text-gray-500 mb-2'>
-								Invoice - #0{invoice.id} issued to{" "}
-								<span className='font-bold'>{invoice.customer_id}</span>
-							</p>
+						<div className='bg-blue-50 w-full mb-3 rounded-md p-3 flex items-center justify-between' key={invoice.id}>
+							<div>
+								<p className='text-sm text-gray-500 mb-2'>
+									Invoice - #0{invoice.id} issued to{" "}
+									<span className='font-bold'>{invoice.customer_id}</span>
+								</p>
 								<h3 className='text-lg font-bold mb-[1px]'>{Number(invoice.total_amount).toLocaleString()}</h3>
-						</div>
+							</div>
 							<Link href={{
 								pathname: `/invoices/${invoice.id}`,
 								query: { customer: invoice.customer_id },
-						}} className='bg-blue-500 text-blue-50 rounded p-3'>
-							Preview
-						</Link>
-					</div>
+							}} className='bg-blue-500 text-blue-50 rounded p-3'>
+								Preview
+							</Link>
+						</div>
 
-					))}
+					)) : (
+						<p className='text-lg text-red-500'>No invoices found</p>
+					)}
 
 				</div>
 			</main>

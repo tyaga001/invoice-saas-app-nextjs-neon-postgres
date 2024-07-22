@@ -32,7 +32,7 @@ export default function CustomersTable({
 			</thead>
 
 			<tbody>
-				{customers.map((customer) => (
+			{customers.length > 0 && customers.map((customer) => (
 					<tr key={customer.id}>
 						<td className='text-sm'>{customer.name}</td>
 						<td className='text-sm'>{customer.email}</td>
