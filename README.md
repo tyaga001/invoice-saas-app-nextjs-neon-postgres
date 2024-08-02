@@ -11,7 +11,8 @@ This project demonstrates how to build a robust, full-featured invoicing system.
 
 ## Tutorial
 
-This project is based on the following tutorial: Writing is in progress, I'll add the link once it's live.
+This project is based on the following tutorial:
+[Full Stack Development with Next.js, Clerk, and Neon Postgres](https://www.freecodecamp.org/news/build-an-invoice-saas-app-with-next-js-and-neon-postgres/)
 
 ## Key Features
 
